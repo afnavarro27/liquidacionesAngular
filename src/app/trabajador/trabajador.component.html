@@ -1,0 +1,69 @@
+<div class="container mt-3">
+    <h2 id="titu">Listado de trabajadores</h2>
+    <table class="table">
+        <thead class="table-success">
+            <tr>
+                <th>Cedula</th>
+                <th>Nombre</th>
+                <th>Dias laborados</th>
+                <th>sueldoTrabajador</th>
+                <th>Auxilio de tranporte</th>
+                <th>cesantias</th>
+                <th>interesCesantia</th>
+                <th>prima</th>
+                <th>vacaciones</th>
+                <th>liquidacion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let i of listTrabjadores">
+                <td>{{i.cedula}}</td>
+                <td>{{i.nombreTrabajador}}</td>
+                <td>{{i.diasLaborados}}</td>
+                <td>{{i.sueldoTrabajador}}</td>
+                <td>{{i.auxilioTransporte}}</td>
+                <td>{{i.cesantias}}</td>
+                <td>{{i.interesCesantia}}</td>
+                <td>{{i.prima}}</td>
+                <td>{{i.vacaiones}}</td>
+                <td>{{i.liquidacion}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<br><br><br>
+<div class="container mt-3">
+    <h2 id="titu">Listado de trabajadores</h2>
+    <table class="table">
+        <thead class="table-success">
+            <tr>
+                <th>Cedula</th>
+                <th>Nombre</th>
+                <th>Dias laborados</th>
+                <th>sueldoTrabajador</th>
+                <th>Auxilio de tranporte</th>
+                <th>cesantias</th>
+                <th>interesCesantia</th>
+                <th>prima</th>
+                <th>vacaciones</th>
+                <th>liquidacion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{tertrabaja.cedula}}</td>
+                <td>{{tertrabaja.nombreTrabajador}}</td>
+                <td>{{tertrabaja.diasLaborados}}</td>
+                <td>{{tertrabaja.sueldoTrabajador}}</td>
+                <td>{{tertrabaja.auxilioTransporte}}</td>
+                <td>{{tertrabaja.cesantias}}</td>
+                <td>{{tertrabaja.interesCesantia}}</td>
+                <td>{{tertrabaja.prima}}</td>
+                <td>{{tertrabaja.vacaiones}}</td>
+                <td>{{tertrabaja.liquidacion}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,11 @@
+.formulario{
+    width: 35%;
+    margin: 0 auto;
+    margin-top: 3%;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+#titu{
+    margin-left: 25%;
+}
