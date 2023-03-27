@@ -1,4 +1,4 @@
-<div class="formulario">
+<div class="formularioAgregarTrabajador">
     <form [formGroup]="trabajadorForm" (submit)="guardar(trabajadorForm.value)"   action="/action_page.php">
 
         <div class="mb-3 mt-3">
@@ -45,7 +45,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let i of listTrabjadores">
+            <tr *ngFor="let i of listTrabjadores" [style.background-color]="i.cedula === tertrabaja.cedula ? '#c0c0c0' : 'transparent'">
                 <td>{{i.cedula}}</td>
                 <td>{{i.nombreTrabajador}}</td>
                 <td>{{i.diasLaborados}}</td>
@@ -61,8 +61,7 @@
     </table>
 </div>
 
-
-<div class="container mt-3" id="tercerTrabajador">
+<!--<div class="container mt-3" id="tercerTrabajador">
     <h2 id="tituloTercerTrabajador">Trabajador con la tercer mejor prima</h2>
     <table class="table">
         <thead class="table-success">
@@ -94,5 +93,4 @@
             </tr>
         </tbody>
     </table>
-</div>
-
+</div>-->
