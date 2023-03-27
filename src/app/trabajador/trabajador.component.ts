@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TrabajadorService } from '../services/trabajador/trabajador.service';
 
 
+
 @Component({
   selector: 'app-trabajador',
   templateUrl: './trabajador.component.html',
@@ -13,18 +14,29 @@ export class TrabajadorComponent implements OnInit{
 
   public listTrabjadores:any;
   public tertrabaja:any;
+  trabajadorForm: FormGroup;
+  public urlCargarTrabajadores = `http://localhost:8090/trabajador/trabajadores`;
+  public urlCargarTercerTrabajador = `http://localhost:8090/trabajador/listarTercerTrabajador`;
 
-  constructor(private trabajadorService:TrabajadorService){
+  constructor(private trabajadorService:TrabajadorService,public fb: FormBuilder){
+    this.trabajadorForm = this.fb.group({})
   }
   
   ngOnInit(): void {
     this.tercerTrabaja()
     this.cargarTrabaja();
     
+    this.trabajadorForm = this.fb.group({
+      cedula: [, [Validators.required]],
+      nombreTrabajador: ['', [Validators.required]],
+      diasLaborados: [, [Validators.required]],
+      auxilioTransporte: [, [Validators.required]],
+      sueldoTrabajador: [, [Validators.required]]
+    })
   }
   
   public cargarTrabaja(){
-    this.trabajadorService.get(`http://localhost:8090/trabajador/trabajadores`)
+    this.trabajadorService.get(this.urlCargarTrabajadores)
     .subscribe(trabajadores =>{
       this.listTrabjadores = trabajadores;
     },
@@ -32,10 +44,16 @@ export class TrabajadorComponent implements OnInit{
   }
   
   public tercerTrabaja(){
-    this.trabajadorService.getTercerTrabajador(`http://localhost:8090/trabajador/listarTercerTrabajador`)
+    this.trabajadorService.getTercerTrabajador(this.urlCargarTercerTrabajador)
     .subscribe((trabajador:any) =>{
       this.tertrabaja = trabajador;
     })
+  }
+
+  public guardar(body:any): void {
+    this.trabajadorService.saveTrabajador(body).subscribe(res => {
+    },
+    error => (console.error(error)))
   }
 
 }

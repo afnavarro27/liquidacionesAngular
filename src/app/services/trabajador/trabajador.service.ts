@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +11,7 @@ export class TrabajadorService {
 
   private apiTraba = 'http://localhost:8090/trabajador/creartrabajador'
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient,) { }
 
   public get(url: string){
     return this.httpClient.get(url)
@@ -22,4 +24,5 @@ export class TrabajadorService {
   public getTercerTrabajador(url: string){
     return this.httpClient.get(url)
   }
+
 }

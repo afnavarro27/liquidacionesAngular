@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { TrabajadorComponent } from './trabajador/trabajador.component';
 import {BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { TrabajadorService } from './services/trabajador/trabajador.service';
 
 @NgModule({
   declarations: [

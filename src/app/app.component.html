@@ -1,32 +1,3 @@
-<div class="formulario">
-    <form [formGroup]="trabajadorForm" (submit)="guardar(trabajadorForm.value)"   action="/action_page.php">
-
-        <div class="mb-3 mt-3">
-            <label for="email" class="form-label">Cedula</label>
-            <input type="number" class="form-control" id="email" placeholder="10065489" formControlName="cedula">
-        </div>
-        <div class="mb-3">
-            <label for="pwd" class="form-label">Nombre de trabajador</label>
-            <input type="text" class="form-control" id="pwd" placeholder="Juan" name="pswd" formControlName="nombreTrabajador">
-        </div>
-        <div class="mb-3">
-            <label for="pwd" class="form-label">Dias laborados</label>
-            <input type="number" class="form-control" id="pwd" placeholder="250" name="pswd" formControlName="diasLaborados">
-        </div>
-        <div class="mb-3">
-            <label for="pwd" class="form-label">Auxilio de transporte</label>
-            <input type="number" class="form-control" id="pwd" placeholder="250000" name="pswd" formControlName="auxilioTransporte">
-        </div>
-        <div class="mb-3">
-            <label for="pwd" class="form-label">Sueldo del trabajador</label>
-            <input type="number" class="form-control" id="pwd" placeholder="1500000" name="pswd" formControlName="sueldoTrabajador">
-        </div>
-        
-        <button type="submit" class="btn btn-primary" [disabled]="trabajadorForm.invalid">Submit</button>
-    </form>
-</div>
-<br><br><br>
-
 <app-trabajador
 ></app-trabajador>
 

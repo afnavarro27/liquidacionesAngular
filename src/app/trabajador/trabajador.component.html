@@ -1,5 +1,34 @@
+<div class="formulario">
+    <form [formGroup]="trabajadorForm" (submit)="guardar(trabajadorForm.value)"   action="/action_page.php">
+
+        <div class="mb-3 mt-3">
+            <label for="email" class="form-label">Cedula</label>
+            <input type="number" class="form-control" id="cedula" placeholder="10065489" formControlName="cedula">
+        </div>
+        <div class="mb-3">
+            <label for="pwd" class="form-label">Nombre de trabajador</label>
+            <input type="text" class="form-control" id="NombreTrabjador" placeholder="Juan" name="pswd" formControlName="nombreTrabajador">
+        </div>
+        <div class="mb-3">
+            <label for="pwd" class="form-label">Dias laborados</label>
+            <input type="number" class="form-control" id="diasLaborados" placeholder="250" name="pswd" formControlName="diasLaborados">
+        </div>
+        <div class="mb-3">
+            <label for="pwd" class="form-label">Auxilio de transporte</label>
+            <input type="number" class="form-control" id="auxilioTransporte" placeholder="250000" name="pswd" formControlName="auxilioTransporte">
+        </div>
+        <div class="mb-3">
+            <label for="pwd" class="form-label">Sueldo del trabajador</label>
+            <input type="number" class="form-control" id="sueldoTrabajador" placeholder="1500000" name="pswd" formControlName="sueldoTrabajador">
+        </div>
+        
+        <button type="submit" class="btn btn-primary" [disabled]="trabajadorForm.invalid">Enviar</button>
+    </form>
+</div>
+
+
 <div class="container mt-3">
-    <h2 id="titu">Listado de trabajadores</h2>
+    <h2 id="tituloTrabajadores">Listado de trabajadores</h2>
     <table class="table">
         <thead class="table-success">
             <tr>
@@ -33,9 +62,8 @@
 </div>
 
 
-<br><br><br>
-<div class="container mt-3">
-    <h2 id="titu">Listado de trabajadores</h2>
+<div class="container mt-3" id="tercerTrabajador">
+    <h2 id="tituloTercerTrabajador">Trabajador con la tercer mejor prima</h2>
     <table class="table">
         <thead class="table-success">
             <tr>
@@ -67,3 +95,4 @@
         </tbody>
     </table>
 </div>
+
